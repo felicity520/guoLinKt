@@ -4,9 +4,9 @@ package com.gyy.guoLinKt.kotlin
 //Person()空括号表示调用父类中的无参构造函数，每个类默认都会有一个无参的构造函数
 //Person()若是没有无参的构造函数，则Person()会报错
 //这里理解成子类传参数到Person，所以Person中的参数，需要在Student中先创建，然后再传到Person
-class Student(val sno: String, val grade: Int, name: String, age: Int) : Person(name, age),Study {
+class Student(private val sno: String, private val grade: Int, name: String, age: Int) : Person(name, age),Study {
     init {
-        println("sno:" + sno + "  grade:" + grade + "   name:" + name + "   age:" + age)
+        println("sno:$sno  grade:$grade   name:$name   age:$age")
     }
 
     //次构造函数必须直接或间接调用主构造函数

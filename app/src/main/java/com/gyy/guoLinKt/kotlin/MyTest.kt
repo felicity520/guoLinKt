@@ -54,6 +54,11 @@ fun main() {
     studyWithPlus()
     studyRun()
     studyApply()
+    studyAlso()
+
+//    运算符重载
+    val str1 = "abc" * 3
+    println("str1 is $str1")
 
     Util.doAction3()
 
@@ -94,6 +99,21 @@ fun main() {
         println(s)
         println("lambda end")
     }
+}
+
+fun studyAlso() {
+    val a = "string".also {
+        println("also---")
+        println(it)
+    }
+    println(a)
+
+    val b = "string".let {
+        println("let---")
+        println(it)
+        it
+    }
+    println(b)
 }
 
 inline fun runRunnable(crossinline block: () -> Unit) {
